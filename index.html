@@ -1,13 +1,461 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>My-Portofolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zidan/My-Portofolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>HELLO WORLD!</h1>
-    <p>This is a simple paragraph.</p>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--   FLOATING DOT NAVIGATION              -->
+  <!-- ═══════════════════════════════════════ -->
+  <nav class="dot-nav" id="dotNav">
+    <a href="#hero"        class="dot active" data-label="Beranda"></a>
+    <a href="#about"       class="dot"        data-label="Tentang"></a>
+    <a href="#experience"  class="dot"        data-label="Pengalaman"></a>
+    <a href="#skills"      class="dot"        data-label="Skills"></a>
+    <a href="#projects"    class="dot"        data-label="Proyek"></a>
+    <a href="#contact"     class="dot"        data-label="Kontak"></a>
+  </nav>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--   HERO                                 -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="hero" class="section hero-section">
+    <div class="hero-bg-text">PORToFOLIO</div>
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        Available for work
+      </div>
+      <h1 class="hero-name reveal delay-1">
+        <em>Hi, my name is</em><br>
+        <span class="name-block">Zidan</span>
+      </h1>
+      <p class="hero-role reveal delay-2">
+        <span class="role-chip">Java Developer</span>
+        <!-- <span class="role-sep">&amp;</span>
+        <span class="role-chip">Frontend Developer</span> -->
+      </p>
+      <p class="hero-tagline reveal delay-3">
+        Designing scalable, collaborative, maintainable, and production-ready systems<br>
+        with clean code and architecture principles
+      </p>
+      <div class="hero-cta reveal delay-4">
+        <a href="#projects" class="btn-primary">My Projects</a>
+        <a href="#contact"  class="btn-ghost">Let's Collab</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+    <div class="hero-stat-float">
+      <div class="stat-item reveal delay-3">
+        <span class="stat-num" data-target="1">0</span>+
+        <span class="stat-label">Years<br>Experience</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--   ABOUT                                -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="about" class="section about-section">
+    <div class="section-label">About me</div>
+    <div class="about-single">
+      <div class="about-text">
+        <h2 class="section-title reveal">
+          Focused on backend,<br>
+          <em>clean code &amp; scalable systems.</em>
+        </h2>
+        <p class="about-desc reveal delay-1">
+          I'm currently a Backend Developer Intern focused on building an Job Portal products called JOSS within a 
+          <strong>microservices</strong> architecture, using <strong>Java</strong> and <strong>Spring Boot</strong>. 
+          I'm accustomed to working in a real-world team environment—from API design to service deployment to production.
+        </p>
+        <p class="about-desc reveal delay-2">
+          I also have experience during college, including developing a sales prediction system based on 
+          <strong>K-Means Clustering</strong> using <strong>Java</strong> & <strong>MySQL</strong> to classify 250 sales data 
+          into actionable business clusters, developing a desktop-based ornamental fish and PC parts sales system.
+        </p>
+ 
+        <div class="about-links reveal delay-3">
+          <button class="link-pill" id="openCvBtn">→ Lihat CV</button>
+          <a href="https://www.linkedin.com/in/zrizkyp" target="_blank" rel="noopener" class="link-pill">→ LinkedIn</a>
+          <a href="https://github.com/zidanrizkyp07" target="_blank" rel="noopener" class="link-pill">→ GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--   EXPERIENCE                           -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="experience" class="section experience-section">
+    <div class="section-label"> My Experiences</div>
+    <!-- <h2 class="section-title reveal">Perjalanan<br><em>Karir Saya</em></h2> -->
+
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-left">
+          <span class="timeline-period">2025 — Present</span>
+        </div>
+        <div class="timeline-connector">
+          <div class="tl-dot current"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="exp-header">
+            <h3 class="exp-role">Developer</h3>
+            <span class="exp-type">Internship</span>
+          </div>
+          <p class="exp-company">PT. Lintas Media Danawa</p>
+          <p class="exp-desc">
+            Focus on supporting back-end product development, such as creating features, fixing bugs, and conducting tests.
+            Responsible for system design, user research, and cross-team collaboration.
+          </p>
+          <div class="exp-tags">
+            <span>Java</span><span>Spring Boot</span><span>Microservices</span><span>Agile</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal delay-1">
+        <div class="timeline-left">
+          <span class="timeline-period">2024 — 2025</span>
+        </div>
+        <div class="timeline-connector">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="exp-header">
+            <h3 class="exp-role">Event Organizer</h3>
+            <span class="exp-type">Contract</span>
+          </div>
+          <p class="exp-company">Dinas Kebudayaan Provinsi DKI Jakarta</p>
+          <p class="exp-desc">
+           Participate as crew and field officers in various events organized by the 
+           Dinas Kebudayaan Provinsi DKI Jakarta for a certain period during 2024-2025
+          </p>
+          <div class="exp-tags">
+            <span>Event Management</span><span>Event Planning</span><span>Teamwork</span><span>Client Interaction</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="timeline-item reveal delay-2">
+        <div class="timeline-left">
+          <span class="timeline-period">2019 — 2020</span>
+        </div>
+        <div class="timeline-connector">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="exp-header">
+            <h3 class="exp-role">Frontend Developer Intern</h3>
+            <span class="exp-type">Internship</span>
+          </div>
+          <p class="exp-company">Digital Agency ABC</p>
+          <p class="exp-desc">
+            Membangun antarmuka web responsif untuk klien korporat menggunakan
+            HTML, CSS, JavaScript, dan Vue.js.
+          </p>
+          <div class="exp-tags">
+            <span>HTML/CSS</span><span>JavaScript</span><span>Vue.js</span>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--   SKILLS                               -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="skills" class="section skills-section">
+    <div class="section-label">My Skills</div>
+
+    <div class="skills-filter reveal delay-1">
+      <button class="filter-btn active" data-filter="all">ALL</button>
+      <button class="filter-btn" data-filter="design">Backend</button>
+      <button class="filter-btn" data-filter="frontend">Frontend</button>
+      <button class="filter-btn" data-filter="tools">Tools</button>
+      <button class="filter-btn" data-filter="soft">Soft Skills</button>
+    </div>
+
+    <div class="skills-cloud reveal delay-2">
+      <span class="skill-tag" data-cat="design"    data-desc="I'm strong at this">Java</span>
+      <span class="skill-tag" data-cat="design"    data-desc="Java Framework i'm familiar with">Springboot</span>
+      <!-- <span class="skill-tag" data-cat="design"    data-desc="Ilustrasi &amp; aset vector">Illustrator</span>
+      <span class="skill-tag" data-cat="design"    data-desc="Editing foto &amp; compositing">Photoshop</span>
+      <span class="skill-tag" data-cat="design"    data-desc="Membangun komponen yang konsisten">Design System</span>
+      <span class="skill-tag" data-cat="design"    data-desc="Interview, survey, usability testing">User Research</span>
+      <span class="skill-tag" data-cat="design"    data-desc="Prototipe interaktif hi-fi">Prototyping</span>
+      <span class="skill-tag" data-cat="design"    data-desc="Sketsa konsep awal">Wireframing</span> -->
+      
+      <span class="skill-tag" data-cat="frontend"  data-desc="Strcture &amp; web design">HTML / CSS</span>
+      <span class="skill-tag" data-cat="frontend"  data-desc="Logic, DOM, &amp; interractive">JavaScript</span>
+      <span class="skill-tag" data-cat="frontend"  data-desc="Frontend framework i'm familiar with">Bootstrap</span>
+      <!-- <span class="skill-tag" data-cat="frontend"  data-desc="Progressive JavaScript framework">Vue.js</span>
+      <span class="skill-tag" data-cat="frontend"  data-desc="Utility-first CSS framework">Tailwind CSS</span>
+      <span class="skill-tag" data-cat="frontend"  data-desc="Animasi web performa tinggi">GSAP</span>
+      <span class="skill-tag" data-cat="frontend"  data-desc="Layout adaptif semua perangkat">Responsive Design</span> -->
+
+      <span class="skill-tag" data-cat="tools"     data-desc="Version control &amp; code collaboration">Git / GitHub</span>
+      <span class="skill-tag" data-cat="tools"     data-desc="Issue tracking &amp; sprint planning">Clickup</span>
+      <span class="skill-tag" data-cat="tools"     data-desc="API Contract &amp; Requirements">Apriary</span>
+      <span class="skill-tag" data-cat="tools"     data-desc="API Documentation">Swagger UI</span>
+      <span class="skill-tag" data-cat="tools"     data-desc="Text Editor">VS Code</span>
+      <span class="skill-tag" data-cat="tools"     data-desc="Text Editor">Netbeans IDE</span>                  
+
+      <span class="skill-tag" data-cat="soft"      data-desc="Iterative problem solving methodology">Design Thinking</span>
+      <span class="skill-tag" data-cat="soft"      data-desc="Cross-team presentation of ideas">Communication</span>
+      <span class="skill-tag" data-cat="soft"      data-desc="Analyse problems &amp; creative solutions">Problem Solving</span>
+      <span class="skill-tag" data-cat="soft"      data-desc="Sprint, retrospective, daily standup">Scrum / Agile</span>
+    </div>
+
+    <div class="skill-tooltip" id="skillTooltip"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--   PROJECTS                             -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="projects" class="section projects-section">
+    <div class="section-label">My Projects</div>
+
+    <div class="projects-grid">
+
+      <article class="project-card reveal">
+        <div class="project-img">
+          <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1a1f2e, #0f1419);">
+            <div class="proj-mockup">
+              <div class="mockup-bar"></div>
+              <div class="mockup-body">
+                <div class="mockup-sidebar"></div>
+                <div class="mockup-main">
+                  <div class="mockup-row w80"></div>
+                  <div class="mockup-row w60"></div>
+                  <div class="mockup-cards">
+                    <div class="mockup-card"></div>
+                    <div class="mockup-card"></div>
+                    <div class="mockup-card"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-overlay">
+            <a href="#" class="project-link">↗ Lihat Proyek</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-year">2024</span>
+            <span class="project-type">Web App</span>
+          </div>
+          <h3 class="project-title">Dashboard Analytics SaaS</h3>
+          <p class="project-desc">Redesign lengkap dashboard analytics untuk platform B2B dengan peningkatan task completion rate sebesar 40%.</p>
+          <div class="project-tech">
+            <span>Figma</span><span>React</span><span>Tailwind</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal delay-1">
+        <div class="project-img">
+          <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
+            <div class="proj-mockup">
+              <div class="mockup-bar"></div>
+              <div class="mockup-body">
+                <div class="mockup-main" style="width:100%">
+                  <div class="mockup-row w80"></div>
+                  <div class="mockup-row w50"></div>
+                  <div class="mockup-row-grid">
+                    <div class="mockup-img-block"></div>
+                    <div class="mockup-img-block"></div>
+                    <div class="mockup-img-block"></div>
+                    <div class="mockup-img-block"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-overlay">
+            <a href="#" class="project-link">↗ Lihat Proyek</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-year">2024</span>
+            <span class="project-type">Web App</span>
+          </div>
+          <h3 class="project-title">Platform E-Learning Interaktif</h3>
+          <p class="project-desc">Desain sistem manajemen belajar dengan UI yang memudahkan navigasi konten untuk 20.000+ pelajar aktif.</p>
+          <div class="project-tech">
+            <span>Figma</span><span>Vue.js</span><span>CSS</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal delay-1">
+        <div class="project-img">
+          <div class="project-img-placeholder" style="background: linear-gradient(135deg, #0d1f0d, #0a1a0a);">
+            <div class="proj-mockup">
+              <div class="mockup-bar"></div>
+              <div class="mockup-body">
+                <div class="mockup-main" style="width:100%">
+                  <div class="mockup-hero-block"></div>
+                  <div class="mockup-row w70" style="margin-top:12px"></div>
+                  <div class="mockup-row w40"></div>
+                  <div class="mockup-btn-row">
+                    <div class="mockup-btn accent"></div>
+                    <div class="mockup-btn"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-overlay">
+            <a href="#" class="project-link">↗ Lihat Proyek</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-year">2023</span>
+            <span class="project-type">Landing Page</span>
+          </div>
+          <h3 class="project-title">Website Korporat Fintech</h3>
+          <p class="project-desc">Landing page modern untuk perusahaan fintech dengan animasi scroll-triggered dan konversi yang dioptimalkan.</p>
+          <div class="project-tech">
+            <span>HTML/CSS</span><span>JS</span><span>GSAP</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal delay-2">
+        <div class="project-img">
+          <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1f1510, #1a0f0a);">
+            <div class="proj-mockup">
+              <div class="mockup-bar"></div>
+              <div class="mockup-body">
+                <div class="mockup-sidebar"></div>
+                <div class="mockup-main">
+                  <div class="mockup-table">
+                    <div class="mockup-thead"></div>
+                    <div class="mockup-trow"></div>
+                    <div class="mockup-trow"></div>
+                    <div class="mockup-trow"></div>
+                    <div class="mockup-trow"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-overlay">
+            <a href="#" class="project-link">↗ Lihat Proyek</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-year">2023</span>
+            <span class="project-type">Web App</span>
+          </div>
+          <h3 class="project-title">Admin Panel Inventory System</h3>
+          <p class="project-desc">Redesign sistem inventaris untuk perusahaan retail dengan tabel data kompleks dan filter real-time.</p>
+          <div class="project-tech">
+            <span>Figma</span><span>React</span><span>Ant Design</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal delay-2">
+        <div class="project-img">
+          <div class="project-img-placeholder" style="background: linear-gradient(135deg, #10101f, #0a0a1a);">
+            <div class="proj-mockup">
+              <div class="mockup-bar"></div>
+              <div class="mockup-body">
+                <div class="mockup-main" style="width:100%">
+                  <div class="mockup-chart-area">
+                    <div class="mockup-chart-bar" style="height:60%"></div>
+                    <div class="mockup-chart-bar" style="height:80%"></div>
+                    <div class="mockup-chart-bar" style="height:45%"></div>
+                    <div class="mockup-chart-bar" style="height:90%"></div>
+                    <div class="mockup-chart-bar" style="height:65%"></div>
+                    <div class="mockup-chart-bar" style="height:75%"></div>
+                  </div>
+                  <div class="mockup-row w60" style="margin-top:10px"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-overlay">
+            <a href="#" class="project-link">↗ Lihat Proyek</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-year">2022</span>
+            <span class="project-type">Web App</span>
+          </div>
+          <h3 class="project-title">HR Management Dashboard</h3>
+          <p class="project-desc">Platform manajemen SDM dengan visualisasi data karyawan, absensi, dan laporan performa tim.</p>
+          <div class="project-tech">
+            <span>Figma</span><span>Vue.js</span><span>Chart.js</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal delay-3">
+        <div class="project-img">
+          <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1a1020, #120a18);">
+            <div class="proj-mockup">
+              <div class="mockup-bar"></div>
+              <div class="mockup-body">
+                <div class="mockup-main" style="width:100%">
+                  <div class="mockup-row w60"></div>
+                  <div class="mockup-form-group">
+                    <div class="mockup-input"></div>
+                    <div class="mockup-input"></div>
+                    <div class="mockup-input half"></div>
+                    <div class="mockup-input half"></div>
+                    <div class="mockup-btn accent full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-overlay">
+            <a href="#" class="project-link">↗ Lihat Proyek</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-year">2022</span>
+            <span class="project-type">Web App</span>
+          </div>
+          <h3 class="project-title">Booking System Klinik</h3>
+          <p class="project-desc">Sistem reservasi online untuk klinik kesehatan dengan alur booking yang disederhanakan hingga 3 langkah.</p>
+          <div class="project-tech">
+            <span>Figma</span><span>HTML/CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+    <footer class="site-footer">
+      <span>© 2025 Zidan Rizky Pratama. Created with ❤️</span>
+    </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
