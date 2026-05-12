@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zidan/My-Portofolio</title>
+  <title>My-Portofolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/letter-z.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 
@@ -21,7 +23,13 @@
     <a href="#skills"      class="dot"        data-label="Skills"></a>
     <a href="#projects"    class="dot"        data-label="Proyek"></a>
     <a href="#contact"     class="dot"        data-label="Kontak"></a>
+    <button class="dot-theme-toggle" id="themeToggle" data-label="Dark Mode" aria-label="Toggle dark mode">
+      <span class="theme-icon">☀</span>
+    </button>
   </nav>
+
+  <!-- custom cursor -->
+  <div class="cursor-ring" id="cursorRing"></div>
 
   <!-- ═══════════════════════════════════════ -->
   <!--   HERO                                 -->
@@ -86,9 +94,9 @@
         </p>
  
         <div class="about-links reveal delay-3">
-          <button class="link-pill" id="openCvBtn">→ Lihat CV</button>
-          <a href="https://www.linkedin.com/in/zrizkyp" target="_blank" rel="noopener" class="link-pill">→ LinkedIn</a>
-          <a href="https://github.com/zidanrizkyp07" target="_blank" rel="noopener" class="link-pill">→ GitHub</a>
+          <a href="assets/cv/CV Zidan Rizky Pratama.pdf" target="_blank" rel="noopener" class="link-pill">My CV</a>
+          <a href="https://www.linkedin.com/in/zrizkyp" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="https://github.com/zidanrizkyp07" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><i data-lucide="github"></i></a>
         </div>
       </div>
     </div>
@@ -457,5 +465,6 @@
     </footer>
 
   <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>

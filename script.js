@@ -172,33 +172,80 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ─────────────────────────────────────────────────────────
-     8. CURSOR GLOW EFFECT (desktop only)
+     8. CUSTOM CURSOR RING
   ───────────────────────────────────────────────────────── */
-  if (window.matchMedia('(pointer: fine)').matches) {
-    const glow = document.createElement('div');
-    glow.style.cssText = `
+  const cursorRing = document.getElementById('cursorRing');
+
+  if (cursorRing && window.matchMedia('(pointer: fine)').matches) {
+    let mouseX = 0, mouseY = 0;
+    let ringX  = 0, ringY  = 0;
+
+    // Inner dot follows mouse exactly
+    const dot = document.createElement('div');
+    dot.style.cssText = `
       position: fixed;
-      width: 400px;
-      height: 400px;
-      pointer-events: none;
-      z-index: 0;
+      width: 5px;
+      height: 5px;
+      background: var(--clr-accent);
       border-radius: 50%;
-      background: radial-gradient(circle, var(--clr-accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 10000;
       transform: translate(-50%, -50%);
-      transition: left 0.3s ease, top 0.3s ease;
-      will-change: left, top;
+      transition: background 0.3s ease;
     `;
-    document.body.appendChild(glow);
+    document.body.appendChild(dot);
 
     window.addEventListener('mousemove', (e) => {
-      glow.style.left = `${e.clientX}px`;
-      glow.style.top  = `${e.clientY}px`;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      // dot follows instantly
+      dot.style.left = `${mouseX}px`;
+      dot.style.top  = `${mouseY}px`;
     }, { passive: true });
+
+    // Ring follows with slight lag
+    function animateCursor() {
+      ringX += (mouseX - ringX) * 0.14;
+      ringY += (mouseY - ringY) * 0.14;
+      cursorRing.style.left = `${ringX}px`;
+      cursorRing.style.top  = `${ringY}px`;
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Shrink ring on interactive elements
+    const interactiveEls = 'a, button, .skill-tag, .dot, .project-card, .filter-btn, .link-pill, .dot-theme-toggle';
+    document.querySelectorAll(interactiveEls).forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
   }
 
 
   /* ─────────────────────────────────────────────────────────
-     9. PROJECT CARD TILT EFFECT
+     9. DARK MODE TOGGLE
+  ───────────────────────────────────────────────────────── */
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon   = themeToggle?.querySelector('.theme-icon');
+
+  // Restore saved preference
+  const savedTheme = localStorage.getItem('portfolio-theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark');
+    if (themeIcon) themeIcon.textContent = '☾';
+    if (themeToggle) themeToggle.dataset.label = 'Light Mode';
+  }
+
+  themeToggle?.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark');
+    if (themeIcon) themeIcon.textContent = isDark ? '☾' : '☀';
+    themeToggle.dataset.label = isDark ? 'Light Mode' : 'Dark Mode';
+    localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
+  });
+
+
+  /* ─────────────────────────────────────────────────────────
+     10. PROJECT CARD TILT EFFECT
   ───────────────────────────────────────────────────────── */
   const cards = document.querySelectorAll('.project-card');
 
