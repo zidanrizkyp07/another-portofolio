@@ -1,6 +1,6 @@
 # 🚀 My-Portofolio
 
-A modern personal portfolio website built with native HTML and CSS.
+A modern personal portfolio website built with native HTML and CSS (Vanilla JS).
 
 This project showcases:
 - Responsive portfolio design
