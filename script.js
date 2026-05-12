@@ -25,45 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ─────────────────────────────────────────────────────────
-     2. DOT NAVIGATION — Highlight Active Section
-  ───────────────────────────────────────────────────────── */
-  const sections = document.querySelectorAll('.section');
-  const dots     = document.querySelectorAll('.dot-nav .dot');
-
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        dots.forEach(dot => {
-          dot.classList.toggle(
-            'active',
-            dot.getAttribute('href') === `#${id}`
-          );
-        });
-      }
-    });
-  }, {
-    threshold: 0.4
-  });
-
-  sections.forEach(sec => sectionObserver.observe(sec));
-
-
-  /* ─────────────────────────────────────────────────────────
-     3. SMOOTH SCROLL for dot nav clicks
-  ───────────────────────────────────────────────────────── */
-  dots.forEach(dot => {
-    dot.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = document.querySelector(dot.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-
-  /* ─────────────────────────────────────────────────────────
      4. COUNTER ANIMATION (stat numbers in hero)
   ───────────────────────────────────────────────────────── */
   const counters = document.querySelectorAll('.stat-num');
@@ -223,29 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ─────────────────────────────────────────────────────────
-     9. DARK MODE TOGGLE
-  ───────────────────────────────────────────────────────── */
-  const themeToggle = document.getElementById('themeToggle');
-  const themeIcon   = themeToggle?.querySelector('.theme-icon');
-
-  // Restore saved preference
-  const savedTheme = localStorage.getItem('portfolio-theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark');
-    if (themeIcon) themeIcon.textContent = '☾';
-    if (themeToggle) themeToggle.dataset.label = 'Light Mode';
-  }
-
-  themeToggle?.addEventListener('click', () => {
-    const isDark = document.body.classList.toggle('dark');
-    if (themeIcon) themeIcon.textContent = isDark ? '☾' : '☀';
-    themeToggle.dataset.label = isDark ? 'Light Mode' : 'Dark Mode';
-    localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
-  });
-
-
-  /* ─────────────────────────────────────────────────────────
-     10. PROJECT CARD TILT EFFECT
+     9. PROJECT CARD TILT EFFECT
   ───────────────────────────────────────────────────────── */
   const cards = document.querySelectorAll('.project-card');
 
