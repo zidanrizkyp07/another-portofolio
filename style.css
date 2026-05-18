@@ -1,30 +1,30 @@
 /* ═══════════════════════════════════════════════════════════
-   🎨 PANDUAN KUSTOMISASI WARNA
-   Ubah nilai di bawah ini untuk mengubah tema seluruh website!
+   🎨 CALM & SOFT TONE — Replace your existing :root block
    ═══════════════════════════════════════════════════════════ */
-
+ 
 /* ─── LIGHT MODE (default) ─────────────────────────────── */
 :root {
-  --clr-bg:          #f5f4f0;
-  --clr-bg-2:        #eceae4;
-  --clr-bg-3:        #e2dfd7;
-  --clr-surface:     #eae8e1;
-
-  --clr-accent:      #1a1a1a;
-  --clr-accent-dim:  #333333;
-  --clr-accent-glow: rgba(0, 0, 0, 0.06);
-
-  --clr-text:        #111110;
-  --clr-text-muted:  #52514d;
-  --clr-text-faint:  #a0998e;
-
-  --clr-border:      rgba(0,0,0,0.08);
-  --clr-border-med:  rgba(0,0,0,0.14);
-
+  --clr-bg:          #f2f0eb;       /* warm ivory */
+  --clr-bg-2:        #e8e4dc;       /* soft linen */
+  --clr-bg-3:        #dedad0;       /* muted sand */
+  --clr-surface:     #edeae3;       /* gentle cream */
+ 
+  --clr-accent:      #5c6b5e;       /* calm sage green */
+  --clr-accent-dim:  #7a8f7c;       /* lighter sage */
+  --clr-accent-glow: rgba(92, 107, 94, 0.08);
+ 
+  --clr-text:        #2e2e2b;       /* soft near-black (warm) */
+  --clr-text-muted:  #6b6760;       /* warm stone */
+  --clr-text-faint:  #a8a39a;       /* dusty taupe */
+ 
+  --clr-border:      rgba(0,0,0,0.06);
+  --clr-border-med:  rgba(0,0,0,0.11);
+ 
+  /* ─── Keep everything below unchanged ─── */
   --font-display: 'DM Serif Display', Georgia, serif;
   --font-heading: 'Syne', sans-serif;
   --font-body:    'DM Sans', sans-serif;
-
+ 
   --section-pad:  clamp(80px, 12vw, 140px);
   --radius-sm:    8px;
   --radius-md:    16px;
@@ -126,39 +126,26 @@ img { display: block; max-width: 100%; }
 .delay-4 { transition-delay: 0.4s; }
 
 /* ═══════════════════════════════════════════════════════════
-   CUSTOM CURSOR
+   CURSOR
    ═══════════════════════════════════════════════════════════ */
-* { cursor: none !important; }
 
-.cursor-ring {
-  position: fixed;
-  width: 28px;
-  height: 28px;
-  border: 1.5px solid var(--clr-accent);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.25s ease, height 0.25s ease,
-              border-color 0.25s ease, background 0.25s ease,
-              opacity 0.3s ease;
-  mix-blend-mode: normal;
+/* Custom SVG arrow cursor for all elements */
+* {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M4 2 L4 20 L8.5 15.5 L12 22 L14 21 L10.5 14.5 L17 14.5 Z' fill='%235c6b5e' stroke='%23f2f0eb' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2, auto !important;
 }
 
-/* Shrink ring when hovering interactive elements */
-body.cursor-hover .cursor-ring {
-  width: 14px;
-  height: 14px;
-  background: var(--clr-accent);
-  border-color: var(--clr-accent);
-  opacity: 0.7;
+/* Pointer cursor for interactive elements */
+a, button, .skill-tag, .project-card, .filter-btn, .link-pill, [role="button"] {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='28' viewBox='0 0 24 28'%3E%3Cpath d='M8 2 C8 2 8 16 8 18 L11 15 L13.5 21 L15.5 20 L13 14 L17 14 Z' fill='%235c6b5e' stroke='%23f2f0eb' stroke-width='1.2' stroke-linejoin='round'/%3E%3Ccircle cx='8' cy='20' r='4' fill='none' stroke='%235c6b5e' stroke-width='1.5' opacity='0.5'/%3E%3C/svg%3E") 8 2, pointer !important;
 }
 
 /* Hide on mobile/touch */
 @media (pointer: coarse) {
-  .cursor-ring { display: none; }
   * { cursor: auto !important; }
 }
+
+/* Remove the old cursor ring — it's no longer used */
+.cursor-ring { display: none !important; }
 
 
 
@@ -581,9 +568,8 @@ body.cursor-hover .cursor-ring {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   EXPERIENCE SECTION
+   TIMELINE SECTION
    ═══════════════════════════════════════════════════════════ */
-.experience-section { border-top: 1px solid var(--clr-border); }
 
 .timeline {
   display: flex;
@@ -596,20 +582,22 @@ body.cursor-hover .cursor-ring {
   grid-template-columns: 130px 40px 1fr;
   gap: 0 24px;
   position: relative;
+  align-items: start;  
 }
 
 .timeline-left {
-  padding-top: 4px;
+  padding-top: 2px;     
   text-align: right;
 }
 
 .timeline-period {
   font-family: var(--font-heading);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--clr-text-faint);
+  font-size: 12px;     
+  font-weight: 750;     
+  letter-spacing: 0.05em;
+  color: var(--clr-text-muted);  
   white-space: nowrap;
+  line-height: 1.2;
 }
 
 .timeline-connector {
