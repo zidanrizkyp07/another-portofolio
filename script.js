@@ -3,6 +3,23 @@
    ═══════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
+// Force exp-type hover via JS as fallback
+document.querySelectorAll('.exp-type').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    el.style.background = 'var(--clr-accent)';
+    el.style.color = 'var(--clr-bg)';
+    el.style.transform = 'translateY(-2px)';
+    el.style.borderColor = 'var(--clr-accent)';
+    el.style.letterSpacing = '0.14em';
+  });
+  el.addEventListener('mouseleave', () => {
+    el.style.background = '';
+    el.style.color = '';
+    el.style.transform = '';
+    el.style.borderColor = '';
+    el.style.letterSpacing = '';
+  });
+});
 
   /* ─────────────────────────────────────────────────────────
      1. REVEAL ON SCROLL (Intersection Observer)
@@ -61,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterBtns  = document.querySelectorAll('.filter-btn');
   const skillTags   = document.querySelectorAll('.skill-tag');
   const tooltip     = document.getElementById('skillTooltip');
+  const expTypes     = document.querySelectorAll('.exp-type');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {

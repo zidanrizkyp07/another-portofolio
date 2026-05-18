@@ -687,16 +687,18 @@ a, button, .skill-tag, .project-card, .filter-btn, .link-pill, [role="button"] {
   flex-wrap: wrap;
 }
 
+/* ── Bolder tech tags (applies all screen sizes) ── */
 .exp-tags span {
   font-family: var(--font-heading);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 800;           /* ← was unset/700, now boldest */
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 4px 10px;
-  border: 1px solid var(--clr-border);
+  padding: 5px 12px;
+  border: 1.5px solid var(--clr-border-med);   /* ← slightly more visible border */
   border-radius: 3px;
-  color: var(--clr-text-faint);
+  color: var(--clr-text-muted);                /* ← darker than text-faint */
+  background: var(--clr-surface);
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -1182,28 +1184,120 @@ a, button, .skill-tag, .project-card, .filter-btn, .link-pill, [role="button"] {
 /* ═══════════════════════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════════════════════ */
-@media (max-width: 900px) {
-  .about-grid         { grid-template-columns: 1fr; }
-  .about-photo-wrap   { max-width: 280px; }
-  .projects-grid      { grid-template-columns: 1fr; }
-  .hero-stat-float    { display: none; }
-  .timeline-item      { grid-template-columns: 100px 30px 1fr; gap: 0 12px; }
-  .skills-header      { flex-direction: column; align-items: flex-start; }
-}
-
-@media (max-width: 600px) {
-  .hero-name    { font-size: 3rem; }
-  .dot-nav      { right: 16px; }
-  .timeline-item { grid-template-columns: 80px 24px 1fr; }
-  .timeline-period { font-size: 9px; }
-  .site-footer  { flex-direction: column; gap: 12px; text-align: center; }
-  .projects-grid { grid-template-columns: 1fr; }
-}
-
 @media (max-width: 768px) {
-    .cursor-ring {
-        display: none;
-    }
+  .timeline-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-left: 28px;        /* indent for the left border line */
+    border-left: 2px solid var(--clr-border);
+    position: relative;
+    margin-bottom: 40px;
+  }
+ 
+  /* Hide the old connector column entirely */
+  .timeline-connector { display: none; }
+ 
+  /* Date sits above the content */
+  .timeline-left {
+    text-align: left;
+    padding-top: 0;
+    margin-bottom: 6px;
+  }
+ 
+  .timeline-period {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--clr-accent);   /* ← accent color on mobile for clarity */
+    letter-spacing: 0.08em;
+  }
+ 
+  /* Dot on the left border */
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--clr-text-faint);
+    background: var(--clr-bg);
+  }
+ 
+  /* Current item gets accent dot */
+  .timeline-item:has(.tl-dot.current)::before {
+    background: var(--clr-accent);
+    border-color: var(--clr-accent);
+    box-shadow: 0 0 0 3px var(--clr-accent-glow);
+  }
+ 
+  .timeline-content {
+    padding-bottom: 0;
+  }
+ 
+  /* Looser tag wrapping on small screens */
+  .exp-tags {
+    gap: 6px;
+  }
+  
+  .exp-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;       /* ← tighter than the default 1.8 */
+    margin-bottom: 10px;
+    word-break: break-word;
+    hyphens: auto;          /* ← prevents awkward word stretching */
+  }
+ 
+  .exp-company {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+ 
+  .exp-role {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+ 
+  .timeline-content {
+    padding-right: 8px;     /* ← small right breathing room */
+  }  
+}
+ 
+@media (max-width: 480px) {
+  .exp-tags span {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+ 
+  .exp-role {
+    font-size: 1rem;
+  }
+ 
+  .exp-type {
+    font-family: var(--font-heading);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    background: var(--clr-accent-glow);
+    padding: 4px 12px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    cursor: default;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
+  }
+  
+  .exp-type:hover {
+    background: var(--clr-accent);
+    color: var(--clr-bg);
+    border-color: var(--clr-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--clr-accent-glow);
+    letter-spacing: 0.14em;   /* slight tracking expand on hover */
+  }
 }
 
 .social-icon {
