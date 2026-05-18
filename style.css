@@ -1226,7 +1226,8 @@ a, button, .skill-tag, .project-card, .filter-btn, .link-pill, [role="button"] {
   .project-tech span {
     white-space: nowrap;          /* ← prevents "OPEN-METEO\nAPI" wrapping */
     font-size: 9px;
-  }  
+  }
+    
   .timeline-item {
     display: flex;
     flex-direction: column;
