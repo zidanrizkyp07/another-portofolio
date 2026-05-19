@@ -691,13 +691,13 @@ a, button, .skill-tag, .project-card, .filter-btn, .link-pill, [role="button"] {
 .exp-tags span {
   font-family: var(--font-heading);
   font-size: 11px;
-  font-weight: 800;           /* ← was unset/700, now boldest */
+  font-weight: 800;          
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 5px 12px;
-  border: 1.5px solid var(--clr-border-med);   /* ← slightly more visible border */
+  border: 1.5px solid var(--clr-border-med);   
   border-radius: 3px;
-  color: var(--clr-text-muted);                /* ← darker than text-faint */
+  color: var(--clr-text-muted);               
   background: var(--clr-surface);
 }
 
